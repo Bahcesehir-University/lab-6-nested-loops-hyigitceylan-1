@@ -1,3 +1,5 @@
+// My C++ tab got closed , thats why I don't have the previous answers to the problems.
+
 // ============================================================================
 //  LAB: Nested Loops, Break & Continue Statements
 //  Course: CMP1001 - Introduction to Programming (C++)
@@ -21,6 +23,7 @@
 // ============================================================================
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -221,7 +224,12 @@ int main() {
     // TODO: Use nested loops to print the right triangle pattern.
     //       Outer loop: controls the row (1 to height)
     //       Inner loop: prints '*' characters for that row
-
+    for (int i = 1; i <= height; i ++){
+        for(int j = 0; j < i ; j++){
+            cout  << "*" ;
+        }
+         cout << endl;
+    }
 
     cout << endl;
 
@@ -251,9 +259,16 @@ int main() {
     //         - Print each number
     //         - Accumulate the sum for that row
     //       After inner loop: print "-> Sum = " and the row's sum
+    for (int i = 1 ; i <= rows ; i++){
+        int sum = 0;
+        for(int j = 1 ; j <= i ; j++){
+            cout << j << " " << setw(20);
+            sum += j;
+    }
+    cout << "-> Sum = " << sum <<endl;
 
-
-    cout << endl;
+    }
+  cout << endl;
 
     // -----------------------------------------------------------------------
     // Exercise 3.4: Search a 2D Grid
@@ -313,8 +328,18 @@ int main() {
     //       Use 'continue' to skip any score below 50.
     //       Accumulate the sum and count of valid scores.
     //       Print the average of valid scores (use double for precision).
-
-
+    float avg = 0 ;
+    int valid_counter = 0;
+    for (int i = 0; i <=scoresSize ; i++){
+        if (scores[i] <50){
+            continue;
+        }
+        
+        avg += scores[i];
+        valid_counter++;
+    }
+    cout << " average of valid scores ;" << avg / valid_counter <<endl;
+    
     cout << endl;
 
     // -----------------------------------------------------------------------
